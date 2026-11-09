@@ -91,6 +91,13 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
 @keyframes seasons{0%{background-position:0 0}25%{background-position:33.333% 0}50%{background-position:66.667% 0}75%{background-position:100% 0}100%{background-position:0 0}}
 @keyframes pageflip{0%,25%,50%,75%,100%{transform:scaleY(.86) translateY(-2%)}6%,31%,56%,81%{transform:scaleY(1.03)}10%,35%,60%,85%{transform:none}}
 
+/* Пазлы: кадры 0 разбросаны, 1 ближе, 2 почти, 3 собраны.
+   В покое лежат разбросанными, при наведении собираются, щёлкают и снова рассыпаются. */
+.z-pieces{background-image:url(img/pazly-pieces.webp);transform-origin:50% 60%}
+.g:hover .z-pieces,.g:focus-within .z-pieces,.g.on .z-pieces{animation:assemble 3.6s step-end infinite,snap 3.6s ease-out infinite}
+@keyframes assemble{0%{background-position:0 0}16%{background-position:33.333% 0}30%{background-position:66.667% 0}42%{background-position:100% 0}88%{background-position:0 0}100%{background-position:0 0}}
+@keyframes snap{0%,41%{transform:none}46%{transform:scale(1.08)}52%{transform:scale(.97)}58%,86%{transform:none}90%{transform:scale(1.04) rotate(-2deg)}100%{transform:none}}
+
 .puff{position:absolute;left:66.2%;top:5.2%;aspect-ratio:1;border-radius:50%;animation:rise 3.6s ease-out infinite}
 .leaf{position:absolute;animation:fall 9s linear infinite}
 
@@ -175,7 +182,9 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
 <div class="g" data-room="kal" data-box="210,242,770,398">
 <span class="sprite k-cal" id="cal" style="left:53.52%;top:19.47%;width:8.98%;height:5.53%"></span>
 </div>
-<div class="g" data-room="paz" data-box="215,400,755,555"></div>
+<div class="g" data-room="paz" data-box="215,400,755,555">
+<span class="sprite z-pieces" style="left:40.23%;top:30.34%;width:19.14%;height:5.73%"></span>
+</div>
 <div class="g" data-room="sor" data-box="200,558,785,705">
 <img class="layer s-board" src="img/sortery-board.webp" alt="">
 <img class="layer s-blocks" src="img/sortery-blocks.webp" alt="">
