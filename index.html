@@ -98,6 +98,16 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
 @keyframes assemble{0%{background-position:0 0}16%{background-position:33.333% 0}30%{background-position:66.667% 0}42%{background-position:100% 0}88%{background-position:0 0}100%{background-position:0 0}}
 @keyframes snap{0%,41%{transform:none}46%{transform:scale(1.08)}52%{transform:scale(.97)}58%,86%{transform:none}90%{transform:scale(1.04) rotate(-2deg)}100%{transform:none}}
 
+/* Контакты: по комнате летают конверты (та же механика, что у букв в «Азбуках») */
+.fly-e1{width:5.08%;height:2.39%;animation:fly-e1 14s ease-in-out infinite}
+.fly-e2{width:4.88%;height:2.33%;animation:fly-e2 12s ease-in-out -5s infinite}
+.fly-e3{width:4.10%;height:1.93%;animation:fly-e3 16s ease-in-out -9s infinite}
+.fly-e2 img{animation-duration:5.6s;animation-direction:reverse}
+.fly-e3 img{animation-duration:4.6s;animation-delay:-2s;scale:-1 1}
+@keyframes fly-e1{0.0%{left:30.27%;top:60.55%} 16.7%{left:37.11%;top:58.92%} 33.3%{left:45.90%;top:60.22%} 50.0%{left:48.83%;top:61.52%} 66.7%{left:41.02%;top:61.85%} 83.3%{left:32.23%;top:59.24%} 100.0%{left:30.27%;top:60.55%}}
+@keyframes fly-e2{0.0%{left:46.88%;top:60.87%} 16.7%{left:39.06%;top:61.72%} 33.3%{left:31.25%;top:61.20%} 50.0%{left:32.23%;top:57.62%} 66.7%{left:40.04%;top:59.57%} 83.3%{left:48.34%;top:59.90%} 100.0%{left:46.88%;top:60.87%}}
+@keyframes fly-e3{0.0%{left:37.11%;top:61.52%} 16.7%{left:44.92%;top:59.24%} 33.3%{left:49.32%;top:60.87%} 50.0%{left:41.99%;top:61.98%} 66.7%{left:33.20%;top:60.22%} 83.3%{left:29.79%;top:61.85%} 100.0%{left:37.11%;top:61.52%}}
+
 .puff{position:absolute;left:66.2%;top:5.2%;aspect-ratio:1;border-radius:50%;animation:rise 3.6s ease-out infinite}
 .leaf{position:absolute;animation:fall 9s linear infinite}
 
@@ -196,6 +206,9 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
 </div>
 <div class="g" data-room="kon" data-box="155,858,725,1000">
 <img class="layer k-girl" src="img/kontakty-girl.webp" alt="">
+<span class="fly fly-e1"><img src="img/kontakty-env-yellow.webp" alt=""></span>
+<span class="fly fly-e2"><img src="img/kontakty-env-air.webp" alt=""></span>
+<span class="fly fly-e3"><img src="img/kontakty-env-yellow.webp" alt=""></span>
 </div>
 <div class="g" data-room="ist" data-box="215,1003,815,1150"></div>
 <div class="g" data-room="pre" data-box="215,1153,790,1300">
