@@ -1,0 +1,9 @@
+---
+# Инструкция для cPanel → Git Version Control:
+# при нажатии «Deploy HEAD Commit» копирует сайт в папку домена beezeetoys.ru.
+# Копирует поверх: файлы, которые есть только на сервере, не удаляются.
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/e140327/public_html/beezeetoys.ru/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp -R img $DEPLOYPATH
