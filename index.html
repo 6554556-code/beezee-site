@@ -71,14 +71,17 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
    При наведении на комнату буквы подрастают. */
 .fly{position:absolute;pointer-events:none;transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
 .fly img{display:block;width:100%;height:100%;animation:tumble 5s ease-in-out infinite;filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 2px 2px rgba(31,42,68,.35))}.g:hover .fly,.g:focus-within .fly,.g.on .fly{transform:scale(1.3)}
-.fly-a{width:4.32%;height:2.99%;animation:fly-a 13s ease-in-out infinite}
-.fly-b{width:3.35%;height:2.99%;animation:fly-b 15s ease-in-out -4s infinite}
-.fly-v{width:3.52%;height:2.99%;animation:fly-v 11s ease-in-out -2s infinite}
-.fly-g{width:3.21%;height:2.99%;animation:fly-g 17s ease-in-out -7s infinite}
+.fly-a{width:4.52%;height:2.99%;animation:fly-a 13s ease-in-out infinite}
+.fly-b{width:3.47%;height:2.99%;animation:fly-b 15s ease-in-out -4s infinite}
+.fly-v{width:3.53%;height:2.99%;animation:fly-v 11s ease-in-out -2s infinite}
+.fly-g{width:2.96%;height:2.99%;animation:fly-g 17s ease-in-out -7s infinite}
 .fly-b img{animation-duration:6.2s;animation-direction:reverse}
 .fly-v img{animation-duration:4.4s;animation-delay:-1.5s}
 .fly-g img{animation-duration:7s;animation-direction:reverse;animation-delay:-3s}
 @keyframes tumble{0%,100%{transform:rotate(-14deg)}25%{transform:rotate(10deg) translateY(-10%)}50%{transform:rotate(-6deg)}75%{transform:rotate(16deg) translateY(8%)}}
+.fly-d{width:4.22%;height:2.99%;animation:fly-d 19s ease-in-out -11s infinite}
+.fly-d img{animation-duration:5.8s;animation-delay:-2.5s}
+@keyframes fly-d{0.0%{left:45.90%;top:9.11%} 16.7%{left:58.59%;top:11.72%} 33.3%{left:50.78%;top:12.50%} 50.0%{left:37.11%;top:11.07%} 66.7%{left:32.23%;top:12.11%} 83.3%{left:41.02%;top:9.77%} 100.0%{left:45.90%;top:9.11%}}
 @keyframes fly-a{0.0%{left:31.05%;top:11.85%} 16.7%{left:34.18%;top:8.79%} 33.3%{left:50.78%;top:10.94%} 50.0%{left:58.59%;top:12.11%} 66.7%{left:45.90%;top:11.85%} 83.3%{left:33.69%;top:10.42%} 100.0%{left:31.05%;top:11.85%}}
 @keyframes fly-b{0.0%{left:58.11%;top:10.74%} 16.7%{left:48.83%;top:12.24%} 33.3%{left:36.13%;top:11.59%} 50.0%{left:32.71%;top:8.79%} 66.7%{left:43.46%;top:10.94%} 83.3%{left:54.69%;top:12.11%} 100.0%{left:58.11%;top:10.74%}}
 @keyframes fly-v{0.0%{left:41.02%;top:12.24%} 16.7%{left:54.20%;top:10.74%} 33.3%{left:59.77%;top:11.98%} 50.0%{left:48.83%;top:12.24%} 66.7%{left:34.38%;top:9.24%} 83.3%{left:31.25%;top:11.72%} 100.0%{left:41.02%;top:12.24%}}
@@ -156,8 +159,8 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
   header img{width:96px;height:60px}
   main{padding:0 0 28px;overflow:hidden}
   .house{width:131vw;flex:none;left:3.45vw}
-  /* буквы мелкие — делаем белый контур толще и плотнее, как у наклейки */
-  .fly img{filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 2px 2px rgba(31,42,68,.35))} /* сдвиг: розовые лестницы слева и справа на равном расстоянии от краёв экрана */
+  /* конверты мелкие — белый контур толще и плотнее, как у наклейки (буквы — без обводки) */
+  .g[data-room="kon"] .fly img{filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 2px 2px rgba(31,42,68,.35))} /* сдвиг: розовые лестницы слева и справа на равном расстоянии от краёв экрана */
 }
 
 @keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
@@ -204,6 +207,7 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
 <span class="fly fly-b"><img src="img/azbuki-b.webp" alt=""></span>
 <span class="fly fly-v"><img src="img/azbuki-v.webp" alt=""></span>
 <span class="fly fly-g"><img src="img/azbuki-g.webp" alt=""></span>
+<span class="fly fly-d"><img src="img/azbuki-d.webp" alt=""></span>
 </div>
 <div class="g" data-room="kal" data-box="210,242,770,398">
 <span class="sprite k-cal" id="cal" style="left:53.52%;top:19.47%;width:8.98%;height:5.53%"></span>
