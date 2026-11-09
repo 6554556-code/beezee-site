@@ -8,14 +8,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1F2A44;--paper:#FBF7F0;--blue:#2A4FD0;--red:#C0392B}
+:root{--ink:#1F2A44;--paper:#F9F7F7;--blue:#2A4FD0;--red:#C0392B}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:Rubik,system-ui,sans-serif;overflow-x:hidden}
 a{color:var(--ink)}a:hover{color:var(--red)}
 .hand{font-family:Caveat,cursive}
 
-header{max-width:1320px;margin:0 auto;padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
-header img{width:112px;height:70px;object-fit:contain}
+header{position:relative;max-width:1320px;margin:0 auto;padding:18px 24px 10px;display:flex;flex-direction:column;align-items:center;gap:6px}
+header img{display:block;width:112px;height:70px;object-fit:contain}
+.since{font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#5B6478}
 .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:999px;font-weight:700;text-decoration:none;border:0;font-family:inherit;font-size:16px;cursor:pointer;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
 .btn:hover{transform:scale(1.06) rotate(-2deg)}
 .btn-dark{background:var(--ink);color:var(--paper)}
@@ -71,7 +72,7 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
 /* Азбуки: буквы летают по этажу. Обёртка .fly двигается по маршруту, картинка внутри кувыркается.
    При наведении на комнату буквы подрастают. */
 .fly{position:absolute;pointer-events:none;transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
-.fly img{display:block;width:100%;height:100%;animation:tumble 5s ease-in-out infinite}
+.fly img{display:block;width:100%;height:100%;animation:tumble 5s ease-in-out infinite;filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 2px 2px rgba(31,42,68,.35))}
 .g:hover .fly,.g:focus-within .fly{transform:scale(1.3)}
 .fly-a{width:4.32%;height:2.99%;animation:fly-a 13s ease-in-out infinite}
 .fly-b{width:3.35%;height:2.99%;animation:fly-b 15s ease-in-out -4s infinite}
@@ -112,6 +113,14 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
 .item span.t{font-size:16px;line-height:1.5}
 .buy{display:flex;flex-wrap:wrap;gap:12px}
 
+/* телефоны: дом крупнее экрана, листья по краям уходят за границу */
+@media (max-width:640px){
+  header{padding:14px 16px 6px}
+  header img{width:96px;height:60px}
+  main{padding:0 0 28px;overflow:hidden}
+  .house{width:131vw;flex:none}
+}
+
 @keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
 @keyframes typing{0%,100%{transform:translateY(0)}50%{transform:translateY(-.25%)}}
 @keyframes hop{0%{transform:translateY(0) scale(1,1)}10%{transform:translateY(0) scale(1.03,.96)}32%{transform:translateY(-1.8%) scale(.98,1.03) rotate(-3deg)}52%{transform:translateY(0) rotate(1deg)}60%{transform:translateY(0) scale(1.03,.96)}68%,100%{transform:translateY(0) scale(1,1)}}
@@ -130,9 +139,8 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
 <body>
 
 <header>
-<img src="img/logo.webp" alt="BeeZee Toys">
-<span class="hand" style="font-size:30px;line-height:1">Занимательно-замечательные игрушки</span>
-<a class="btn btn-dark" href="#buy">Где купить</a>
+<a href="./" aria-label="BeeZee Toys — на главную"><img src="img/logo.webp" alt="BeeZee Toys"></a>
+<span class="since">Производитель игрушек с 2017 г.</span>
 </header>
 
 <main>
