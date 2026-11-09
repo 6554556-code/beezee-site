@@ -108,6 +108,15 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
 @keyframes fly-e2{0.0%{left:46.88%;top:60.87%} 16.7%{left:39.06%;top:61.72%} 33.3%{left:31.25%;top:61.20%} 50.0%{left:32.23%;top:57.62%} 66.7%{left:40.04%;top:59.57%} 83.3%{left:48.34%;top:59.90%} 100.0%{left:46.88%;top:60.87%}}
 @keyframes fly-e3{0.0%{left:37.11%;top:61.52%} 16.7%{left:44.92%;top:59.24%} 33.3%{left:49.32%;top:60.87%} 50.0%{left:41.99%;top:61.98%} 66.7%{left:33.20%;top:60.22%} 83.3%{left:29.79%;top:61.85%} 100.0%{left:37.11%;top:61.52%}}
 
+/* История: мама-основательница мастерит игрушку. Кадры: 0 замах, 1 опускает, 2 удар, 3 отскок.
+   В покое держит молоток наготове, при наведении стучит; в момент удара — жёлтый «бам». */
+.h-mom{background-image:url(img/istoriya-mom.webp);background-position:33.333% 0;transform-origin:40% 100%;animation:sit 4.2s ease-in-out infinite}
+.g:hover .h-mom,.g:focus-within .h-mom,.g.on .h-mom{animation:hammer 1.3s step-end infinite}
+@keyframes hammer{0%{background-position:0 0}40%{background-position:33.333% 0}55%{background-position:66.667% 0}72%{background-position:100% 0}100%{background-position:0 0}}
+.bam{position:absolute;opacity:0;pointer-events:none}
+.g:hover .bam,.g:focus-within .bam,.g.on .bam{animation:bam 1.3s linear infinite}
+@keyframes bam{0%,54%{opacity:0;transform:scale(.4)}57%{opacity:1;transform:scale(1.15)}68%{opacity:1;transform:scale(1)}74%,100%{opacity:0;transform:scale(.9)}}
+
 .puff{position:absolute;left:66.2%;top:5.2%;aspect-ratio:1;border-radius:50%;animation:rise 3.6s ease-out infinite}
 .leaf{position:absolute;animation:fall 9s linear infinite}
 
@@ -210,7 +219,10 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
 <span class="fly fly-e2"><img src="img/kontakty-env-air.webp" alt=""></span>
 <span class="fly fly-e3"><img src="img/kontakty-env-yellow.webp" alt=""></span>
 </div>
-<div class="g" data-room="ist" data-box="215,1003,815,1150"></div>
+<div class="g" data-room="ist" data-box="215,1003,815,1150">
+<span class="sprite h-mom" style="left:28.81%;top:64.71%;width:11.82%;height:9.11%"></span>
+<svg class="bam" viewBox="0 0 24 24" aria-hidden="true" style="left:36.13%;top:68.6%;width:2.4%;height:1.6%"><path d="M4 14L1 6M12 10V1M20 14l3-8" stroke="#F6C945" stroke-width="3.2" stroke-linecap="round" fill="none"/></svg>
+</div>
 <div class="g" data-room="pre" data-box="215,1153,790,1300">
 <span class="sprite p-granny" style="left:26.32%;top:75.35%;width:11.82%;height:8.88%"></span>
 </div>
