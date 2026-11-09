@@ -61,6 +61,11 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
 .g:hover .o-girl,.g:focus-within .o-girl{animation:dress 3.2s step-end infinite,sit 3.6s ease-in-out infinite}
 @keyframes dress{0%{background-position:0 0}25%{background-position:33.333% 0}42%{background-position:66.667% 0}55%{background-position:100% 0}92%{background-position:0 0}100%{background-position:0 0}}
 
+/* вешалка с платьями: при наведении платья качаются (центр → вправо → центр → влево) */
+.o-rack{background-image:url(img/odevashki-rack.webp)}
+.g:hover .o-rack,.g:focus-within .o-rack{animation:swing 1.4s step-end infinite}
+@keyframes swing{0%{background-position:0 0}25%{background-position:33.333% 0}50%{background-position:66.667% 0}75%{background-position:100% 0}100%{background-position:0 0}}
+
 .puff{position:absolute;left:66.2%;top:5.2%;aspect-ratio:1;border-radius:50%;animation:rise 3.6s ease-out infinite}
 .leaf{position:absolute;animation:fall 9s linear infinite}
 
@@ -136,6 +141,7 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
 <img class="layer s-girl" src="img/sortery-girl.webp" alt="">
 </div>
 <div class="g" data-room="ode" data-box="195,696,770,858">
+<span class="sprite o-rack" style="left:22.6%;top:46.81%;width:15.6%;height:7.23%"></span>
 <span class="sprite o-girl" style="left:50.4%;top:45.8%;width:8.6%;height:9.58%"></span>
 </div>
 <div class="g" data-room="kon" data-box="155,858,725,1000">
