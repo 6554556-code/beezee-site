@@ -117,6 +117,13 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
 .g:hover .bam,.g:focus-within .bam,.g.on .bam{animation:bam 1.3s linear infinite}
 @keyframes bam{0%,54%{opacity:0;transform:scale(.4)}57%{opacity:1;transform:scale(1.15)}68%{opacity:1;transform:scale(1)}74%,100%{opacity:0;transform:scale(.9)}}
 
+/* История: малыш ползёт к маме. Кадры: 0 и 2 — на четвереньках, 1 и 3 — тянет ручку вперёд.
+   В покое сидит и «дышит», при наведении перебирает ручками и подползает к маме. */
+.h-baby{background-image:url(img/istoriya-baby.webp);transform-origin:50% 100%;animation:sit 3s ease-in-out infinite}
+.g:hover .h-baby,.g:focus-within .h-baby,.g.on .h-baby{animation:crawl 1.2s step-end infinite,toMom 3.2s ease-in-out forwards}
+@keyframes crawl{0%{background-position:0 0}25%{background-position:33.333% 0}50%{background-position:66.667% 0}75%{background-position:100% 0}100%{background-position:0 0}}
+@keyframes toMom{from{transform:translateX(0)}to{transform:translateX(-55%)}}
+
 .puff{position:absolute;left:66.2%;top:5.2%;aspect-ratio:1;border-radius:50%;animation:rise 3.6s ease-out infinite}
 .leaf{position:absolute;animation:fall 9s linear infinite}
 
@@ -220,6 +227,7 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
 <span class="fly fly-e3"><img src="img/kontakty-env-yellow.webp" alt=""></span>
 </div>
 <div class="g" data-room="ist" data-box="215,1003,815,1150">
+<span class="sprite h-baby" style="left:48.83%;top:68.55%;width:10.16%;height:5.27%"></span>
 <span class="sprite h-mom" style="left:28.81%;top:64.71%;width:11.82%;height:9.11%"></span>
 <svg class="bam" viewBox="0 0 24 24" aria-hidden="true" style="left:36.13%;top:68.6%;width:2.4%;height:1.6%"><path d="M4 14L1 6M12 10V1M20 14l3-8" stroke="#F6C945" stroke-width="3.2" stroke-linecap="round" fill="none"/></svg>
 </div>
