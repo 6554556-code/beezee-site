@@ -84,6 +84,13 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
 @keyframes fly-v{0.0%{left:41.02%;top:12.24%} 16.7%{left:54.20%;top:10.74%} 33.3%{left:59.77%;top:11.98%} 50.0%{left:48.83%;top:12.24%} 66.7%{left:34.38%;top:9.24%} 83.3%{left:31.25%;top:11.72%} 100.0%{left:41.02%;top:12.24%}}
 @keyframes fly-g{0.0%{left:50.78%;top:12.11%} 16.7%{left:35.64%;top:12.24%} 33.3%{left:32.23%;top:9.11%} 50.0%{left:44.43%;top:10.74%} 66.7%{left:59.38%;top:10.94%} 83.3%{left:52.73%;top:12.24%} 100.0%{left:50.78%;top:12.11%}}
 
+/* Календари: настольный календарь. Кадры: 0 зима, 1 весна, 2 лето, 3 осень.
+   В покое показывает текущее время года (выставляет скрипт), при наведении листает сезоны. */
+.k-cal{background-image:url(img/kalendari-cal.webp);transform-origin:50% 12%}
+.g:hover .k-cal,.g:focus-within .k-cal,.g.on .k-cal{animation:seasons 4.8s step-end infinite,pageflip 4.8s ease-out infinite}
+@keyframes seasons{0%{background-position:0 0}25%{background-position:33.333% 0}50%{background-position:66.667% 0}75%{background-position:100% 0}100%{background-position:0 0}}
+@keyframes pageflip{0%,25%,50%,75%,100%{transform:scaleY(.86) translateY(-2%)}6%,31%,56%,81%{transform:scaleY(1.03)}10%,35%,60%,85%{transform:none}}
+
 .puff{position:absolute;left:66.2%;top:5.2%;aspect-ratio:1;border-radius:50%;animation:rise 3.6s ease-out infinite}
 .leaf{position:absolute;animation:fall 9s linear infinite}
 
@@ -165,7 +172,9 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
 <span class="fly fly-v"><img src="img/azbuki-v.webp" alt=""></span>
 <span class="fly fly-g"><img src="img/azbuki-g.webp" alt=""></span>
 </div>
-<div class="g" data-room="kal" data-box="210,242,770,398"></div>
+<div class="g" data-room="kal" data-box="210,242,770,398">
+<span class="sprite k-cal" id="cal" style="left:53.52%;top:19.47%;width:8.98%;height:5.53%"></span>
+</div>
 <div class="g" data-room="paz" data-box="215,400,755,555"></div>
 <div class="g" data-room="sor" data-box="200,558,785,705">
 <img class="layer s-board" src="img/sortery-board.webp" alt="">
@@ -198,6 +207,13 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
 <script>
 const W = 1024, H = 1536;
 const TOUCH = matchMedia('(hover: none)').matches;
+
+// календарь в покое показывает текущее время года
+(() => {
+  const m = new Date().getMonth();                 // 0 — январь
+  const season = [0,0,1,1,1,2,2,2,3,3,3,0][m];     // 0 зима, 1 весна, 2 лето, 3 осень
+  document.getElementById('cal').style.backgroundPosition = (season * 100 / 3) + '% 0';
+})();
 const ROOMS = {
   azb: { name: 'Азбуки', color: '#D8467F', note: 'хит BeeZee', lead: 'Глянцевые магнитные буквы в горошек, облака и звёзды. Прочные, экологичные, сплошной магнит.', buy: true,
     photos: [['azbuka-tuba','Магнитная азбука в тубе, 54 буквы'],['azbuka-dom','Буквы Д, О, М и фигурки'],['azbuka-papa','Буквы ПАПА на холодильнике'],['azbuka-ch','Розовая буква Ч в цветочек'],['azbuka-girl','Девочка с тубой магнитной азбуки']] },
