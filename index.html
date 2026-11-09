@@ -32,48 +32,45 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
 .g{position:absolute;inset:0;pointer-events:none}
 .hot{position:absolute;padding:0;margin:0;border:0;background:transparent;cursor:pointer;pointer-events:auto;border-radius:48px;transition:box-shadow .35s,background-color .35s;-webkit-tap-highlight-color:transparent}
 .hot:focus-visible{outline:none}
-.g:hover .hot,.g:focus-within .hot{background-color:rgba(255,255,255,.10);box-shadow:inset 0 0 0 4px rgba(255,255,255,.85),0 0 0 3px rgba(31,42,68,.12)}
+.g:hover .hot,.g:focus-within .hot,.g.on .hot{background-color:rgba(255,255,255,.10);box-shadow:inset 0 0 0 4px rgba(255,255,255,.85),0 0 0 3px rgba(31,42,68,.12)}
 .go{position:absolute;right:7%;bottom:10%;padding:8px 16px;border-radius:999px;background:var(--ink);color:var(--paper);font:700 15px Rubik,sans-serif;opacity:0;transform:translateY(8px) scale(.8);transition:all .35s cubic-bezier(.34,1.56,.64,1);white-space:nowrap}
-.g:hover .go,.g:focus-within .go{opacity:1;transform:none}
+.g:hover .go,.g:focus-within .go,.g.on .go{opacity:1;transform:none}
 .sp{position:absolute;width:24px;height:24px;opacity:0}
-.g:hover .sp{animation:sparkle 1s ease-out infinite}
-.g:hover .sp2{animation-delay:.3s}.g:hover .sp3{animation-delay:.6s}
+.g:hover .sp,.g.on .sp{animation:sparkle 1s ease-out infinite}
+.g:hover .sp2,.g.on .sp2{animation-delay:.3s}
+.g:hover .sp3,.g.on .sp3{animation-delay:.6s}
 
 /* персонажи — покой */
 .s-girl{transform-origin:35.2% 44.9%;animation:sway 3.4s ease-in-out infinite}
 .k-girl{transform-origin:63.5% 65.1%;animation:typing 2.4s ease-in-out infinite}
 .s-board{transform-origin:53.2% 44.9%}
 .s-blocks{transform-origin:43.2% 44.7%}
-/* персонажи — наведение */
-.g:hover .s-girl,.g:focus-within .s-girl{animation:hop 1.6s ease-in-out infinite}
-.g:hover .s-board,.g:focus-within .s-board{animation:wiggle .9s ease-in-out infinite}
-.g:hover .s-blocks,.g:focus-within .s-blocks{animation:boing .8s ease-in-out .15s infinite}
-.g:hover .k-girl,.g:focus-within .k-girl{animation:nod 1.1s ease-in-out infinite}
+/* персонажи — наведение мышкой (:hover) или тап на телефоне (.on) */
+.g:hover .s-girl,.g:focus-within .s-girl,.g.on .s-girl{animation:hop 1.6s ease-in-out infinite}
+.g:hover .s-board,.g:focus-within .s-board,.g.on .s-board{animation:wiggle .9s ease-in-out infinite}
+.g:hover .s-blocks,.g:focus-within .s-blocks,.g.on .s-blocks{animation:boing .8s ease-in-out .15s infinite}
+.g:hover .k-girl,.g:focus-within .k-girl,.g.on .k-girl{animation:nod 1.1s ease-in-out infinite}
 
 /* бабушка с газетой: 4 кадра в одной полосе */
 .sprite{position:absolute;background:url(img/pressa-granny.webp) 0 0/400% 100% no-repeat;pointer-events:none}
-.p-granny{transform-origin:50% 100%;animation:sit 4s ease-in-out infinite}
-.g:hover .p-granny,.g:focus-within .p-granny{animation:read 2.88s step-end infinite,sit 4s ease-in-out infinite}
+.p-granny{transform-origin:50% 100%;animation:sit 4s ease-in-out infinite}.g:hover .p-granny,.g:focus-within .p-granny,.g.on .p-granny{animation:read 2.88s step-end infinite,sit 4s ease-in-out infinite}
 @keyframes read{0%{background-position:0 0}38%{background-position:33.333% 0}48%{background-position:66.667% 0}80%{background-position:100% 0}90%{background-position:0 0}100%{background-position:0 0}}
 @keyframes sit{0%,100%{transform:scale(1,1)}50%{transform:scale(1.008,1.015)}}
 
 /* девочка у зеркала: 4 кадра — держит платье, примеряет, кружится, в новом платье */
-.o-girl{background-image:url(img/odevashki-girl.webp);transform-origin:50% 100%;animation:sit 3.6s ease-in-out infinite}
-.g:hover .o-girl,.g:focus-within .o-girl{animation:dress 3.2s step-end infinite,sit 3.6s ease-in-out infinite}
+.o-girl{background-image:url(img/odevashki-girl.webp);transform-origin:50% 100%;animation:sit 3.6s ease-in-out infinite}.g:hover .o-girl,.g:focus-within .o-girl,.g.on .o-girl{animation:dress 3.2s step-end infinite,sit 3.6s ease-in-out infinite}
 @keyframes dress{0%{background-position:0 0}25%{background-position:33.333% 0}42%{background-position:66.667% 0}55%{background-position:100% 0}92%{background-position:0 0}100%{background-position:0 0}}
 
 /* вешалка с платьями: при наведении ездит вправо-влево, платья качаются по инерции
    кадры: 0 — центр, 1 — качнулись вправо, 2 — центр, 3 — качнулись влево */
-.o-rack{background-image:url(img/odevashki-rack.webp)}
-.g:hover .o-rack,.g:focus-within .o-rack{animation:roll 3.2s ease-in-out infinite,inertia 3.2s step-end infinite}
+.o-rack{background-image:url(img/odevashki-rack.webp)}.g:hover .o-rack,.g:focus-within .o-rack,.g.on .o-rack{animation:roll 3.2s ease-in-out infinite,inertia 3.2s step-end infinite}
 @keyframes roll{0%,100%{transform:translateX(-12%)}50%{transform:translateX(12%)}}
 @keyframes inertia{0%{background-position:100% 0}18%{background-position:0 0}38%{background-position:33.333% 0}68%{background-position:66.667% 0}88%{background-position:100% 0}100%{background-position:100% 0}}
 
 /* Азбуки: буквы летают по этажу. Обёртка .fly двигается по маршруту, картинка внутри кувыркается.
    При наведении на комнату буквы подрастают. */
 .fly{position:absolute;pointer-events:none;transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
-.fly img{display:block;width:100%;height:100%;animation:tumble 5s ease-in-out infinite;filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 2px 2px rgba(31,42,68,.35))}
-.g:hover .fly,.g:focus-within .fly{transform:scale(1.3)}
+.fly img{display:block;width:100%;height:100%;animation:tumble 5s ease-in-out infinite;filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 2px 2px rgba(31,42,68,.35))}.g:hover .fly,.g:focus-within .fly,.g.on .fly{transform:scale(1.3)}
 .fly-a{width:4.32%;height:2.99%;animation:fly-a 13s ease-in-out infinite}
 .fly-b{width:3.35%;height:2.99%;animation:fly-b 15s ease-in-out -4s infinite}
 .fly-v{width:3.52%;height:2.99%;animation:fly-v 11s ease-in-out -2s infinite}
@@ -198,6 +195,7 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
 
 <script>
 const W = 1024, H = 1536;
+const TOUCH = matchMedia('(hover: none)').matches;
 const ROOMS = {
   azb: { name: 'Азбуки', color: '#D8467F', note: 'хит BeeZee', lead: 'Глянцевые магнитные буквы в горошек, облака и звёзды. Прочные, экологичные, сплошной магнит.', buy: true,
     photos: [['azbuka-tuba','Магнитная азбука в тубе, 54 буквы'],['azbuka-dom','Буквы Д, О, М и фигурки'],['azbuka-papa','Буквы ПАПА на холодильнике'],['azbuka-ch','Розовая буква Ч в цветочек'],['azbuka-girl','Девочка с тубой магнитной азбуки']] },
@@ -227,7 +225,15 @@ document.querySelectorAll('.g').forEach((g) => {
   b.setAttribute('aria-label', 'Открыть раздел ' + r.name);
   b.style.cssText = `left:${l}%;top:${t}%;width:${w}%;height:${h}%`;
   b.innerHTML = star('#F6C945', 'left:4%;top:8%', '') + star('#3FB8C5', 'right:6%;top:12%', 'sp2') + star('#E8559A', 'left:46%;bottom:8%', 'sp3') + '<span class="go">Войти →</span>';
-  b.addEventListener('click', () => enter(id));
+  b.addEventListener('click', () => {
+    // на телефоне первый тап оживляет комнату, второй — открывает раздел
+    if (TOUCH && !g.classList.contains('on')) {
+      document.querySelectorAll('.g.on').forEach((x) => x.classList.remove('on'));
+      g.classList.add('on');
+      return;
+    }
+    enter(id);
+  });
   g.appendChild(b);
 });
 
@@ -245,7 +251,12 @@ function openPanel(r) {
   document.getElementById('close').focus();
 }
 
-function closePanel() { panel.classList.remove('open'); panel.innerHTML = ''; }
+// тап мимо комнат «усыпляет» оживлённую комнату
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.hot')) document.querySelectorAll('.g.on').forEach((x) => x.classList.remove('on'));
+});
+
+function closePanel() { panel.classList.remove('open'); panel.innerHTML = ''; document.querySelectorAll('.g.on').forEach((x) => x.classList.remove('on')); }
 panel.addEventListener('click', (e) => { if (e.target === panel || e.target.id === 'close') closePanel(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && panel.classList.contains('open')) closePanel(); });
 </script>
