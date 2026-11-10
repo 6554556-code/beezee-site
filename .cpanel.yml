@@ -10,3 +10,4 @@ deployment:
     - /bin/cp -R css $DEPLOYPATH
     - /bin/cp -R js $DEPLOYPATH
     - /bin/cp -R azbuki $DEPLOYPATH
+    - /bin/cp -R kalendari $DEPLOYPATH
