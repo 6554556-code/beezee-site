@@ -127,12 +127,11 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
 @keyframes crawl{0%{background-position:0 0}25%{background-position:33.333% 0}50%{background-position:66.667% 0}75%{background-position:100% 0}100%{background-position:0 0}}
 @keyframes toMom{from{transform:translateX(0)}to{transform:translateX(-55%)}}
 
-/* Календари: маленький календарик у окна. В покое стоит на полу, при наведении или тапе взлетает и кружит по комнате */
-.k-mini{position:absolute;left:33.69%;top:21.55%;width:6.05%;height:3.45%;pointer-events:none}
+/* Календари: маленький календарик у окна. В покое стоит на полу, при наведении или тапе подпрыгивает */
+.k-mini{position:absolute;transform-origin:50% 100%;left:33.69%;top:21.55%;width:6.05%;height:3.45%;pointer-events:none}
 .k-mini img{display:block;width:100%;height:100%;filter:drop-shadow(0 2px 2px rgba(31,42,68,.3))}
-.g:hover .k-mini,.g:focus-within .k-mini,.g.on .k-mini{animation:miniFly 6s ease-in-out infinite}
-.g:hover .k-mini img,.g:focus-within .k-mini img,.g.on .k-mini img{animation:tumble 3s ease-in-out infinite}
-@keyframes miniFly{0.0%{left:33.69%;top:21.55%} 20.0%{left:41.02%;top:20.70%} 40.0%{left:48.83%;top:19.53%} 60.0%{left:45.90%;top:21.61%} 80.0%{left:37.60%;top:20.96%} 100.0%{left:33.69%;top:21.55%}}
+.g:hover .k-mini,.g:focus-within .k-mini,.g.on .k-mini{animation:miniHop 1.1s ease-in-out infinite}
+@keyframes miniHop{0%,100%{transform:translateY(0) scale(1,1)}12%{transform:translateY(0) scale(1.08,.9)}38%{transform:translateY(-38%) scale(.95,1.06) rotate(-6deg)}60%{transform:translateY(0) scale(1,1) rotate(2deg)}68%{transform:translateY(0) scale(1.06,.93)}80%{transform:translateY(0) scale(1,1)}}
 /* большой календарь отражён — «смотрит» от окна */
 .k-cal{scale:-1 1}
 
