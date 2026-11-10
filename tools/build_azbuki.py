@@ -208,9 +208,9 @@ body = f'''{crumbs_html(crumbs)}
 <img src="/img/azbuki-g.webp" alt="" style="right:4%;top:46%;height:30%;animation-delay:-3.6s">
 </div>
 <a class="home" href="/">← Вернуться в дом</a>
-<span class="note hand">хит BeeZee</span>
-<h1>Магнитная азбука для детей</h1>
-<p class="lead">Три азбуки на магнитах: узорные «Ассоциации», классическая на 141 букву и «Зверобуквы» с животными в каждой букве. Играть на холодильнике и учить буквы можно каждый день.</p>
+<span class="note hand">хиты BeeZee</span>
+<h1>Магнитные азбуки для детей</h1>
+<p class="lead">Мы производим восхитительные азбуки на магнитах. Представляем хиты: узорную азбуку «Ассоциации», классическую на 141 букву и набор «Зверобуквы» с животными в каждой букве.</p>
 </section>
 
 <article class="text wide">
@@ -253,12 +253,12 @@ body = f'''{crumbs_html(crumbs)}
 
 </article>'''
 graph = [
-  {"@type": "CollectionPage", "name": "Магнитная азбука для детей", "url": SITE + "/azbuki/", "inLanguage": "ru", "publisher": {"@id": SITE + "/#org"},
+  {"@type": "CollectionPage", "name": "Магнитные азбуки для детей", "url": SITE + "/azbuki/", "inLanguage": "ru", "publisher": {"@id": SITE + "/#org"},
    "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": SITE + f"/azbuki/{a['slug']}/", "name": a['name']} for i, a in enumerate(A)]}},
   ORG, crumbs_ld(crumbs), faq_ld]
-page('/azbuki/', 'Магнитная азбука для детей — буквы на магнитах | BeeZee Toys',
+page('/azbuki/', 'Магнитные азбуки для детей — буквы на магнитах | BeeZee Toys',
      'Магнитные азбуки BeeZee Toys: «Ассоциации» на 54 буквы, классическая на 141 букву и «Зверобуквы и вкусноцифры» с животными и цифрами. Как выбрать азбуку и во что с ней играть.',
-     'Магнитная азбука для детей — BeeZee Toys', 'Три магнитные азбуки: «Ассоциации», классическая на 141 букву и «Зверобуквы и вкусноцифры».',
+     'Магнитные азбуки для детей — BeeZee Toys', 'Три магнитные азбуки: «Ассоциации», классическая на 141 букву и «Зверобуквы и вкусноцифры».',
      '/img/azbuka-tuba.webp', graph, body)
 
 # ---------- страницы азбук ----------
