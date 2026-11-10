@@ -1,0 +1,74 @@
+# Старый сайт beezeetoys.ru (nethouse) — адреса для 301-редиректов
+# Собрано 10.11.2026. Формат: старый адрес  →  куда вести (заполним при сборке .htaccess)
+
+## Служебные страницы
+/                                   → /
+/products                           → /
+/products/category/new-toys         → /
+/products/category/wooden-toys      → /
+/products/category/3663539          → /   (магнитные игрушки)
+/products/category/3663596          → /   (ожидаем)
+/posts                              → /pressa/
+/posts/businessdialog23             → /pressa/
+/posts/statia-v-delovom-peterburge  → /pressa/
+/our_history                        → /istoriya/
+/contacts                           → /kontakty/
+/buy                                → /kontakty/
+/video                              → /
+
+## Товары → раздел
+/products/azbuka54                  → /azbuki/
+/products/43716169                  → /azbuki/   (азбука 54 буквы в тубе)
+/products/43716163                  → /azbuki/   (рисование шариками «Магнитная азбука»)
+/products/37770646                  → /azbuki/   (планшет Magpad)
+/products/30411069                  → /azbuki/   (Читазл)
+/products/45881268                  → /kalendari/ (планер «Мой календарь»)
+/products/45881126                  → /odevashki/ (Семья Картонкиных)
+/products/wooden-magnetic-dolls     → /odevashki/ (Модницы)
+/products/37274979                  → /odevashki/ (Малышки)
+/products/30565233                  → /pazly/    (Зоопазл)
+/products/39495047                  → /pazly/    (Собери зверят)
+/products/41628268                  → /pazly/    (Зоо Тетрис)
+/products/40396999                  → /pazly/    (головоломка Кубик)
+/products/46304396                  → /pazly/    (Цветовой код)
+/products/39222439                  → /pazly/    (Креативные шестерёнки)
+/products/41067165                  → /pazly/    (вкладыш Семья животных)
+/products/42881566                  → /pazly/    (вкладыш Формы и фигуры)
+/products/40326322                  → /pazly/    (черепашки)
+/products/45882157                  → /sortery/  (каталка Слон)
+/products/45881886                  → /sortery/  (Маленькие пуговки)
+/products/45881623                  → /sortery/  (Корзинки)
+/products/49523043                  → /sortery/  (Корзиночки с мишками)
+/products/40825172                  → /sortery/  (Гирьки Монтессори)
+/products/40397196                  → /sortery/  (Цвета и формы)
+/products/42532373                  → /sortery/  (Цвета и формы пастель)
+/products/43204637                  → /sortery/  (Ёжик с яблоками)
+/products/41067207                  → /sortery/  (рыбалка Поймай червячка круг)
+/products/38919110                  → /sortery/  (рыбалка в сундучке)
+/products/40397298                  → /sortery/  (рыбалка По морям)
+/products/45881240                  → /sortery/  (рыбалка Чудо рыба)
+/products/30418477                  → /sortery/  (Мультикуб)
+/products/memo-goki                 → /sortery/  (тактильное лото)
+/products/piratbalansir             → /sortery/  (балансир)
+/products/42841772                  → /sortery/  (Луна-Месяц)
+/products/42496486                  → /sortery/  (Крокодильчики)
+/products/41597305                  → /sortery/  (Крокодильчики)
+/products/41135871                  → /sortery/  (балансир тетрис)
+/products/41135873                  → /sortery/  (балансир животные)
+/products/radugagnomy               → /sortery/  (пирамидка Радуга с гномами)
+/products/42881682                  → /sortery/  (пирамидка маленькая)
+/products/42841177                  → /sortery/  (радуга пастель)
+# ниже — товары без своего раздела (мозаики, конструкторы с дрелью, продукты, кухни, машинки…)
+# → ведём на главную, если Ира не решит иначе
+/products/42979005  /products/38653292  /products/wooden--toy-pizza  /products/button-nail-alex
+/products/40385558  /products/40395424  /products/45784308  /products/mosaic-electric-drill
+/products/45881337  /products/45882021  /products/45882048  /products/45882069
+/products/45882207  /products/45882218  /products/45881403  /products/fetr-fingers
+/products/40825063  /products/37804276  /products/43205544  /products/zuby
+/products/42841315  /products/flamingo  /products/32036918  /products/37770616
+/products/38037465  /products/rainbow-blocks-wooden  /products/magnetic-animals-zveriata-magnitnye
+/products/37274949  /products/39222176  /products/41067184  /products/40397842
+/products/40353446  /products/40397744  /products/42881546  /products/43313045
+/products/36642388  /products/40326340  /products/39494968  /products/40397670
+/products/wooden-kitchen-toy-derevyannaya-kukhnia-detskaya  /products/40397797
+/products/39753159  /products/37682506
