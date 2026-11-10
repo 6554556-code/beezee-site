@@ -1,5 +1,7 @@
 # Генератор страниц раздела «Азбуки» (обзор + 3 азбуки). Пишет обычные HTML-файлы в репозиторий.
-import json, os
+import json, os, hashlib
+def ver(f):  # номер версии файла — браузер скачает заново, как только файл изменится
+    return hashlib.md5(open(os.path.join('/home/claude/beezee-site', f), 'rb').read()).hexdigest()[:8]
 ROOT = '/home/claude/beezee-site'
 SITE = 'https://beezeetoys.ru'
 COLOR = '#D8467F'
@@ -46,7 +48,7 @@ def crumbs_ld(items):
 def page(path, title, desc, og_title, og_desc, og_image, graph, body, gallery_js=False):
     url = SITE + path
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
-    js = '\n<script src="/js/gallery.js" defer></script>' if gallery_js else ''
+    js = f'\n<script src="/js/gallery.js?v={ver("js/gallery.js")}" defer></script>' if gallery_js else ''
     html = f'''<!doctype html>
 <html lang="ru">
 <head>
@@ -65,7 +67,7 @@ def page(path, title, desc, og_title, og_desc, og_image, graph, body, gallery_js
 <link rel="icon" href="/img/logo.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/page.css">{js}
+<link rel="stylesheet" href="/css/page.css?v={ver('css/page.css')}">{js}
 
 <script type="application/ld+json">
 {ld}
