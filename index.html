@@ -135,6 +135,13 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
 /* большой календарь отражён — «смотрит» от окна */
 .k-cal{scale:-1 1}
 
+/* Пресса: телевизор. Кадры: 0 выключен, 1 помехи, 2 новости, 3 логотип BeeZee.
+   В покое показывает логотип, при наведении или тапе переключает каналы: помехи → новости → помехи → логотип. */
+.p-tv{background-image:url(img/pressa-tv.webp);background-position:100% 0;transform-origin:50% 100%}
+.g:hover .p-tv,.g:focus-within .p-tv,.g.on .p-tv{animation:channels 4s step-end infinite,tvShake 4s linear infinite}
+@keyframes channels{0%{background-position:0 0}6%{background-position:33.333% 0}16%{background-position:66.667% 0}50%{background-position:33.333% 0}58%{background-position:100% 0}100%{background-position:100% 0}}
+@keyframes tvShake{0%,5%,17%,49%,59%,100%{transform:none}8%,52%{transform:translateX(-1.5%) rotate(-1deg)}11%,55%{transform:translateX(1.5%) rotate(1deg)}14%{transform:none}}
+
 .puff{position:absolute;left:66.2%;top:5.2%;aspect-ratio:1;border-radius:50%;animation:rise 3.6s ease-out infinite}
 .leaf{position:absolute;animation:fall 9s linear infinite}
 
@@ -245,6 +252,7 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
 <svg class="bam" viewBox="0 0 24 24" aria-hidden="true" style="left:36.13%;top:68.6%;width:2.4%;height:1.6%"><path d="M4 14L1 6M12 10V1M20 14l3-8" stroke="#F6C945" stroke-width="3.2" stroke-linecap="round" fill="none"/></svg>
 </div>
 <div class="g" data-room="pre" data-box="215,1153,790,1300">
+<span class="sprite p-tv" style="left:46.97%;top:77.8%;width:7.81%;height:6.18%"></span>
 <span class="sprite p-granny" style="left:26.32%;top:75.35%;width:11.82%;height:8.88%"></span>
 </div>
 </div>
