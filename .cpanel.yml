@@ -7,3 +7,5 @@ deployment:
     - export DEPLOYPATH=/home/e140327/public_html/beezeetoys.ru/
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp -R img $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R azbuki $DEPLOYPATH
