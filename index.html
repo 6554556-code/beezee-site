@@ -127,6 +127,15 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
 @keyframes crawl{0%{background-position:0 0}25%{background-position:33.333% 0}50%{background-position:66.667% 0}75%{background-position:100% 0}100%{background-position:0 0}}
 @keyframes toMom{from{transform:translateX(0)}to{transform:translateX(-55%)}}
 
+/* Календари: маленький календарик у окна. В покое стоит на полу, при наведении или тапе взлетает и кружит по комнате */
+.k-mini{position:absolute;left:33.69%;top:21.55%;width:6.05%;height:3.45%;pointer-events:none}
+.k-mini img{display:block;width:100%;height:100%;filter:drop-shadow(0 2px 2px rgba(31,42,68,.3))}
+.g:hover .k-mini,.g:focus-within .k-mini,.g.on .k-mini{animation:miniFly 6s ease-in-out infinite}
+.g:hover .k-mini img,.g:focus-within .k-mini img,.g.on .k-mini img{animation:tumble 3s ease-in-out infinite}
+@keyframes miniFly{0.0%{left:33.69%;top:21.55%} 20.0%{left:41.02%;top:20.70%} 40.0%{left:48.83%;top:19.53%} 60.0%{left:45.90%;top:21.61%} 80.0%{left:37.60%;top:20.96%} 100.0%{left:33.69%;top:21.55%}}
+/* большой календарь отражён — «смотрит» от окна */
+.k-cal{scale:-1 1}
+
 .puff{position:absolute;left:66.2%;top:5.2%;aspect-ratio:1;border-radius:50%;animation:rise 3.6s ease-out infinite}
 .leaf{position:absolute;animation:fall 9s linear infinite}
 
@@ -210,6 +219,7 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
 <span class="fly fly-d"><img src="img/azbuki-d.webp" alt=""></span>
 </div>
 <div class="g" data-room="kal" data-box="210,242,770,398">
+<span class="k-mini"><img src="img/kalendari-mini.webp" alt=""></span>
 <span class="sprite k-cal" id="cal" style="left:53.52%;top:19.47%;width:8.98%;height:5.53%"></span>
 </div>
 <div class="g" data-room="paz" data-box="215,400,755,555">
