@@ -136,8 +136,8 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
 .k-cal{scale:-1 1}
 
 /* Пресса: телевизор. Кадры: 0 выключен, 1 помехи, 2 новости, 3 логотип BeeZee.
-   В покое показывает логотип, при наведении или тапе переключает каналы: помехи → новости → помехи → логотип. */
-.p-tv{background-image:url(img/pressa-tv.webp);background-position:100% 0;transform-origin:50% 100%}
+   В покое выключен, при наведении или тапе включается и переключает каналы: помехи → новости → помехи → логотип. */
+.p-tv{background-image:url(img/pressa-tv.webp);background-position:0 0;transform-origin:50% 100%}
 .g:hover .p-tv,.g:focus-within .p-tv,.g.on .p-tv{animation:channels 4s step-end infinite,tvShake 4s linear infinite}
 @keyframes channels{0%{background-position:0 0}6%{background-position:33.333% 0}16%{background-position:66.667% 0}50%{background-position:33.333% 0}58%{background-position:100% 0}100%{background-position:100% 0}}
 @keyframes tvShake{0%,5%,17%,49%,59%,100%{transform:none}8%,52%{transform:translateX(-1.5%) rotate(-1deg)}11%,55%{transform:translateX(1.5%) rotate(1deg)}14%{transform:none}}
