@@ -33,8 +33,12 @@ main{position:relative;max-width:1320px;margin:0 auto;padding:0 16px 40px;displa
 .hot{position:absolute;padding:0;margin:0;border:0;background:transparent;cursor:pointer;pointer-events:auto;border-radius:48px;transition:box-shadow .35s,background-color .35s;-webkit-tap-highlight-color:transparent}
 .hot:focus-visible{outline:none}
 .g:hover .hot,.g:focus-within .hot,.g.on .hot{background-color:rgba(255,255,255,.10);box-shadow:inset 0 0 0 4px rgba(255,255,255,.85),0 0 0 3px rgba(31,42,68,.12)}
-.go{position:absolute;right:7%;bottom:10%;padding:8px 16px;border-radius:999px;background:var(--ink);color:var(--paper);font:700 15px Rubik,sans-serif;opacity:0;transform:translateY(8px) scale(.8);transition:all .35s cubic-bezier(.34,1.56,.64,1);white-space:nowrap}
+/* кнопка-глаз на правом краю комнаты: полупрозрачный белый кружок, внутри моргающий глаз */
+.go{position:absolute;right:-30px;top:50%;width:60px;height:60px;margin-top:-30px;border-radius:50%;background:rgba(255,255,255,.6);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);box-shadow:0 0 0 2px rgba(255,255,255,.85),0 6px 16px -6px rgba(31,42,68,.45);display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.6);transition:opacity .3s,transform .4s cubic-bezier(.34,1.56,.64,1)}
+.eye{display:block;width:76%;aspect-ratio:156/105;background:url(img/eye.webp) 0 0/300% 100% no-repeat;animation:blink 3.2s step-end infinite}
+@keyframes blink{0%{background-position:0 0}72%{background-position:50% 0}77%{background-position:100% 0}84%{background-position:50% 0}88%{background-position:0 0}100%{background-position:0 0}}
 .g:hover .go,.g:focus-within .go,.g.on .go{opacity:1;transform:none}
+.hot:hover .go{transform:scale(1.08)}
 .sp{position:absolute;width:24px;height:24px;opacity:0}
 .g:hover .sp,.g.on .sp{animation:sparkle 1s ease-out infinite}
 .g:hover .sp2,.g.on .sp2{animation-delay:.3s}
@@ -174,6 +178,7 @@ footer{max-width:1320px;margin:0 auto;padding:24px 24px 48px;display:flex;flex-w
   header img{width:96px;height:60px}
   main{padding:0 0 28px;overflow:hidden}
   .house{width:131vw;flex:none;left:3.45vw}
+  .go{right:6px;width:46px;height:46px;margin-top:-23px}
   /* конверты мелкие — белый контур толще и плотнее, как у наклейки (буквы — без обводки) */
   .g[data-room="kon"] .fly img{filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 2px 2px rgba(31,42,68,.35))} /* сдвиг: розовые лестницы слева и справа на равном расстоянии от краёв экрана */
 }
@@ -305,7 +310,7 @@ document.querySelectorAll('.g').forEach((g) => {
   b.className = 'hot';
   b.setAttribute('aria-label', 'Открыть раздел ' + r.name);
   b.style.cssText = `left:${l}%;top:${t}%;width:${w}%;height:${h}%`;
-  b.innerHTML = star('#F6C945', 'left:4%;top:8%', '') + star('#3FB8C5', 'right:6%;top:12%', 'sp2') + star('#E8559A', 'left:46%;bottom:8%', 'sp3') + '<span class="go">Войти →</span>';
+  b.innerHTML = star('#F6C945', 'left:4%;top:8%', '') + star('#3FB8C5', 'right:6%;top:12%', 'sp2') + star('#E8559A', 'left:46%;bottom:8%', 'sp3') + '<span class="go"><span class="eye"></span></span>';
   b.addEventListener('click', () => {
     // на телефоне первый тап оживляет комнату, второй — открывает раздел
     if (TOUCH && !g.classList.contains('on')) {
