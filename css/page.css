@@ -112,3 +112,6 @@ footer{max-width:1040px;margin:0 auto;padding:24px 20px 48px;font-size:15px;colo
 .lb-prev{left:12px;top:50%;margin-top:-24px}
 .lb-next{right:12px;top:50%;margin-top:-24px}
 @media (max-width:640px){.lightbox{padding:56px 8px}.lb-prev,.lb-next{top:auto;bottom:14px;margin:0}.lb-prev{left:calc(50% - 60px)}.lb-next{right:calc(50% - 60px)}}
+/* кнопка «Отзывы покупателей» в шапке товара (ссылка на внешний сайт с отзывами) */
+.hero .reviews{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:46px;margin-top:20px;padding:8px 22px;line-height:1.25;border-radius:999px;background:#F6C945;color:var(--ink);font-weight:800;font-size:17px;text-decoration:none;box-shadow:0 3px 0 rgba(0,0,0,.18);transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+.hero .reviews:hover{transform:scale(1.05) rotate(-1.5deg);color:var(--ink)}
